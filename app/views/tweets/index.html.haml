@@ -1,0 +1,19 @@
+= render partial: "shared/spinner"
+
+.row.title-bar
+  %h1.span4 Search
+
+.row
+  .span12
+
+    .well.form-inline.input-append
+      = form_tag tweets_path, method: :get, remote: true do
+
+        = text_field_tag :q, params[:q], placeholder: "Enter a search query", id: "search-query", class: "span8"
+
+        %button.btn.btn-primary#search-submit
+          %i.icon-search
+          Search
+
+    .well
+      #index-table

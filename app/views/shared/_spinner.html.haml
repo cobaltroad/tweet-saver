@@ -1,0 +1,20 @@
+:javascript
+  $(document).ready (function() {
+    $(".spinner").bind("ajaxSend", function() {
+      $(this).show();
+    }).bind("ajaxStop", function() {
+      $(this).hide();
+    }).bind("ajaxError", function() {
+      $(this).hide();
+    });
+  });
+
+:css
+  .spinner {
+    position: fixed;
+    top: 15%;
+    left: 50%;
+  }
+
+.spinner{style: "display:none;"}
+  = image_tag "loading.gif"
